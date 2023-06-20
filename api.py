@@ -29,7 +29,7 @@ def get_connection():
 
 @api.route('/api/help')
 def get_api_help():
-    with open('api_help.txt', 'r') as api_help:
+    with open('api_documentation.md', 'r') as api_help:
         return flask.render_template('api_help.html', text = api_help.read())
 
 

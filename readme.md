@@ -20,17 +20,19 @@ We were able to get most we set out to do working. All the features on the websi
 - *Game Info*: From a game link, look at the information of just 1 game in more detail. 
 - *Comparisons*: Search two games and get their metacritic scores, sales, and more side by side to compare.
 
-## Notes
+## Setup
 
 Dani's computer is a bit funky, because of that, your config.py will need to be a bit funky as well. You'll need the addition of a specified port. Our `psycopg2.connect` in `api.py` will be looking for that port, so you'll need it.
 
 Please create a `config.py` in the directory and format it like this:
 
 ```
-	database = 'name_of_directory'
-	user = 'your_username'
-	password = 'your_password'
-	port = 5432
+database = 'video_games'
+user = 'your_username'
+password = 'your_password'
+port = 5432
 ```
 
-5432 is the default PSQL port, so it's likely this is what you'll have to use.
+5432 is the default PSQL port, so it's likely this is what you'll have to use. For easiness, here is the SQL command to load the database: `psql -U my_user_name video_games < data.sql`.
+
+The website can be started by running: `python3 app.py localhost 5000`. 
